@@ -1,5 +1,7 @@
 import { MongoClient } from 'mongodb';
 
+const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.passowrd}@${process.env.clustername}.vndt4.mongodb.net/${process.env.database}?retryWrites=true&w=majority`;
+
 const handler = async (req, res) => {
   if (req.method === 'POST') {
     const { email, name, text } = req.body;
